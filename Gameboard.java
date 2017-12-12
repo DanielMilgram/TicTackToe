@@ -31,8 +31,18 @@ public class Gameboard {
         }
 
         //checks board diagonally
-        
-
+        if(board[0][0] != null && board[1][1] != null && board[2][2] != null) {
+            if(board[0][0] == player && board[1][1] == player && board[2][2] == player) {
+                gameOver = true;
+                System.out.println("Player " + player + " has won.");
+            }
+        }
+        if(board[0][2] != null && board[1][1] != null && board[2][0] != null) {
+            if(board[0][2] == player && board[1][1] == player && board[2][0] == player) {
+                gameOver = true;
+                System.out.println("Player " + player + " has won.");
+            }
+        }
         return true;
     }
 
